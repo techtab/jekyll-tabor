@@ -1,0 +1,39 @@
+title: Filip Chabik - DevOps Engineer, Husband & Dad
+description: "DevOps Engineer, Husband & Dad"
+avatar_url: /images/cropped-blog.png
+favicon: /images/favicon.png
+
+# Social
+twitter: "https://twitter.com/hadret"
+github: "https://github.com/hadret"
+feed: "/feed.xml"
+
+url: ""
+baseurl: ""
+
+gems:
+  - jekyll-paginate-v2
+  - jekyll-sitemap
+
+permalink: /:year/:month/:title
+markdown: kramdown
+
+sass:
+  sass_dir: _sass
+  style: compact # possible values: nested expanded compact compressed
+
+defaults:
+  - scope:
+      type: posts
+    values:
+      layout: post
+
+# Pagination Settings
+pagination:
+  enabled: true
+  per_page: 3
+  permalink: '/page/:num/'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+

@@ -1,0 +1,11 @@
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo%3A400%2C500%2C800%7CDefault%7CLora%3A400%2C400i%2C700&#038;subset=latin%2Clatin-ext&#038;" />
+    {% if site.favicon  %}<link href="{{ site.favicon | relative_url }}" rel="shortcut icon" type="image/x-icon" />{% endif %}
+    <link rel="stylesheet" href="{{ "static/css/style.css" | relative_url }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | relative_url }}">
+</head>

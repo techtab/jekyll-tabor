@@ -1,0 +1,72 @@
+<header id="masthead" class="site-header drop-in drop-in--from-top" role="banner">
+    <div class="container max-width">
+        <div class="flex justify-between">
+            <div class="flex justify-start items-center">
+                <a href="{{ site.url }}{{ site.baseurl }}" class="custom-logo-link site-logo" rel="home"><img src="{{ site.avatar_url | relative_url }}" class="custom-logo initial loaded" alt="{{ site.title }}" data-was-processed="true"></a>
+                <span class="sep"></span>
+                <nav class="social-navigation" aria-label="Social Menu">
+                    <div class="menu-social-container">
+                        <ul id="menu-social" class="header-font medium smooth gray list-reset">
+                            {% if site.twitter %}<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ site.twitter }}"><span class="screen-reader-text">Twitter</span><svg class="icon icon-twitter" aria-hidden="true" role="img"><use href="{{ "/static/images/sprite.svg#icon-twitter" | relative_url }}" xlink:href="{{ "/static/images/sprite.svg#icon-twitter" | relative_url }}"></use></svg></a></li>{% endif %}
+                            {% if site.github %}<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ site.github }}"><span class="screen-reader-text">GitHub</span><svg class="icon icon-github" aria-hidden="true" role="img"><use href="{{ "/static/images/sprite.svg#icon-github" | relative_url }}" xlink:href="{{ "/static/images/sprite.svg#icon-github" | relative_url }}"></use></svg></a></li>{% endif %}
+                            {% if site.feed %}<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ site.feed | relative_url }}"><span class="screen-reader-text">Feed</span><svg class="icon icon-rss" aria-hidden="true" role="img"><use href="{{ "/static/images/sprite.svg#icon-rss" | relative_url }}" xlink:href="{{ "/static/images/sprite.svg#icon-rss" | relative_url }}"></use></svg></a></li>{% endif %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="flex items-center">
+                <nav id="site-navigation" class="main-navigation nav primary flex items-center justify-end" role="navigation" aria-label="Primary Menu">
+                    <button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
+                        <span class="screen-reader-text">Menu</span>
+                    </button>
+                    <div class="menu-primary-container">
+                        <ul id="menu-primary" class="primary-menu header-font medium smooth gray list-reset">
+                            {% for item in site.data.navigation.toc %}
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom ">
+                                    <a href="{{ item.url | relative_url }}" aria-current="page">{{ item.page }}</a>
+                                    {% if item.subfolderitems %}
+                                        <button class="dropdown-toggle" aria-expanded="false"><svg class="icon icon-down" aria-hidden="true" role="img"><use href="{{ "/static/images/sprite.svg#icon-down" | relative_url }}" xlink:href="{{ "/static/images/sprite.svg#icon-down" | relative_url }}"></use></svg><span class="svg-fallback icon-down"></span><span class="screen-reader-text">Expand child menu</span></button>
+                                        <ul class="sub-menu">
+                                            {% for entry in item.subfolderitems %}
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ entry.url | relative_url }}">{{ entry.page }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <!-- <button id="search-toggle" type="submit" class="button--chromeless search-toggle search-submit ">
+                        <svg class="icon icon-search" aria-hidden="true" role="img">
+                            <use href="{{ "/static/images/sprite.svg#icon-search" | relative_url }}" xlink:href="{{ "/static/images/sprite.svg#icon-search" | relative_url }}"></use>
+                        </svg> <span class="screen-reader-text">Search</span>
+                    </button> -->
+                    <div id="c-settings" class="c-settings ">
+                        <button id="settings-toggle" class="c-settings__toggle search-toggle button--chromeless" aria-label="Show/hide accessibility settings" aria-controls="settings" aria-expanded="false">
+                            <svg class="icon icon-settings" aria-hidden="true" role="img">
+                                <use href="{{ "/static/images/sprite.svg#icon-settings" | relative_url }}" xlink:href="{{ "/static/images/sprite.svg#icon-settings" | relative_url }}"></use>
+                            </svg> <span class="screen-reader-text">Settings</span>
+                        </button>
+                        <div id="settings" class="c-settings__wrapper" aria-hidden="true" aria-labelledby="settings-toggle">
+                            <div class="c-settings__inner header-font medium smooth">
+                                <div class="c-settings__arrow"></div>
+                                <div class="c-settings__item c-settings__item--night-mode">
+                                    <div class="c-settings__item-inner flex items-center">
+                                        <span class="c-settings__label gray">Night Mode</span>
+                                        <button tabindex="0" class="c-settings__switch c-settings__switch--night-mode c-switch" role="switch" aria-checked="false" aria-label="Toggle Night Mode"></button>
+                                    </div>
+                                </div>
+                                <div class="c-settings__item text-size">
+                                    <div class="c-settings__item-inner flex items-center">
+                                        <span class="c-settings__label gray">Text Size</span>
+                                        <button class="c-settings__text-size" tabindex="0" aria-label="Change Text Size">A</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

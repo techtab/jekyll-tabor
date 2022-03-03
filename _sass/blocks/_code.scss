@@ -1,0 +1,114 @@
+.entry-content {
+	.wp-block-code {
+		@include blockMobileDisplay();
+		padding: 0.8em 1.1em;
+
+		&,
+		code {
+			background: none;
+		}
+
+		code {
+			font-size: 14px;
+			line-height: 1.8;
+			padding: 0;
+			top: 0;
+		}
+	}
+
+	.hljs {
+	  display: block;
+	  overflow-x: auto;
+	  padding: 0.5em;
+	  background: $color--background-pre;
+	  color: #657b83;
+	  border: 1px solid #e2e4e7;
+      	  border-radius: 4px;
+          top: 0px;
+	}
+
+	.hljs-comment, .hljs-quote {
+	  color: #93a1a1;
+	}
+
+	/* Solarized Green */
+
+	.hljs-keyword, .hljs-selector-tag, .hljs-addition {
+	  color: #859900;
+	}
+
+	/* Solarized Cyan */
+
+	.hljs-number, .hljs-string, .hljs-meta .hljs-meta-string, .hljs-literal, .hljs-doctag, .hljs-regexp {
+	  color: #2aa198;
+	}
+
+	/* Solarized Blue */
+
+	.hljs-title, .hljs-section, .hljs-name, .hljs-selector-id, .hljs-selector-class {
+	  color: #268bd2;
+	}
+
+	/* Solarized Yellow */
+
+	.hljs-attribute, .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-class .hljs-title, .hljs-type {
+	  color: #b58900;
+	}
+
+	/* Solarized Orange */
+
+	.hljs-symbol, .hljs-bullet, .hljs-subst {
+	  color: #cb4b16;
+	}
+
+	.hljs-meta {
+	  color: #cb4b16;
+
+	  .hljs-keyword {
+	    color: #cb4b16;
+	  }
+	}
+
+	.hljs-selector-attr, .hljs-selector-pseudo, .hljs-link {
+	  color: #cb4b16;
+	}
+
+	/* Solarized Red */
+
+	.hljs-built_in, .hljs-deletion {
+	  color: #dc322f;
+	}
+
+	.hljs-formula {
+	  background: #eee8d5;
+	}
+
+	.hljs-emphasis {
+	  font-style: italic;
+	}
+
+	.hljs-strong {
+	  font-weight: bold;
+	}
+}
+
+pre {
+	white-space: pre !important;
+	word-wrap: normal !important;
+}
+
+.EnlighterJS span {
+	font-family: Monaco,"Source Code Pro","Liberation Mono","Courier New",Courier,monospace;
+	font-size: 1.4em;
+	line-height: 2em;
+}
+
+.EnlighterJS {
+	width: auto !important;
+	overflow-x: scroll !important;
+	word-wrap: normal !important;
+}
+
+.EnlighterJS li {
+	white-space: pre !important;
+}

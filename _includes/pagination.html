@@ -1,0 +1,13 @@
+{% if paginator.total_pages > 1 %}
+<nav class="navigation pagination" role="navigation" aria-label="Posts">
+    <h2 class="screen-reader-text">Posts navigation</h2>
+    <div class="nav-links">
+    	{% if paginator.previous_page %}
+    		<a class="prev page-numbers" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><svg class="icon icon-left" aria-hidden="true" role="img"><use xlink:href="{{ "/static/images/sprite.svg#icon-left" | relative_url }}"></use></svg><span class="screen-reader-text">Previous page</span></a>
+    	{% endif %}
+    	{% if paginator.next_page %}
+	    	<a class="next page-numbers" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><span class="screen-reader-text">Next page</span><svg class="icon icon-right" aria-hidden="true" role="img"><use xlink:href="{{ "/static/images/sprite.svg#icon-right" | relative_url }}"></use></svg></a>
+	    {% endif %}
+	</div>
+</nav>
+{% endif %}

@@ -1,0 +1,30 @@
+#
+# Be aware that even a small syntax error here can lead to failures in output.
+#
+# Navigation
+toc:
+  - page: Blog
+    url: /
+    subfolderitems:
+      - page: Archive
+        url: /#/
+      - page: Categories
+        url: /#/
+  - page: Project
+    url: /#/
+  - page: Shelf
+    url: /#/
+    subfolderitems:
+      - page: Links
+        url: /#/
+      - page: Podcasts
+        url: /#/
+  - page: About
+    url: /#/
+    subfolderitems:
+      - page: Contact
+        url: /#/
+      - page: Now
+        url: /#/
+      - page: Privacy Policy
+        url: /#/

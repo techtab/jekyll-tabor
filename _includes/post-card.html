@@ -1,0 +1,17 @@
+<article class="post type-post status-publish format-standard sticky hentry">
+    <div class="post-wrapper">
+        <header class="entry-header top-spacer bottom-spacer">
+            <h2 class="entry-title h1"><a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title }}</a></h2>
+            <div class="entry-meta flex items-center medium header-font gray"><svg class="icon icon-thumb-tack" aria-hidden="true" role="img">
+                    <use xlink:href="{{ '/static/images/sprite.svg#icon-thumb-tack' | relative_url }}"></use>
+                </svg><span class="posted-on"><span class="screen-reader-text">Posted on</span> <a href="{{ post.url | relative_url }}" class="posted-on--published"><span>Published </span><time class="entry-date published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B , %Y"}}</time></a></span></div>
+        </header>
+        <div class="entry-content">
+            {% if post.image %}
+            <figure class="wp-block-image alignwide size-large"><a href="{{ post.url | relative_url }}" data-featherlight="image"><img src="{% if post.image contains ' :// ' %}{{ post.image }}{% else %}{{ site.baseurl }}{{ post.image }}{% endif %}" alt="{{ post.title }}" class="wp-image-1664 initial loaded"></a></figure>
+            {% endif %}
+            {{ post.excerpt | truncatewords:70 }}
+            <p><a class="more-link " href="{{ post.url | relative_url }}">Read more<span class="screen-reader-text">{{ post.title }}</span></a></p>
+        </div>
+    </div>
+</article>
